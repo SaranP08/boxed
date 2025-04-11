@@ -3489,3 +3489,189 @@ body {
   }
 }
 /* ========== End of Modal Styles ========== */
+
+/* ========== User About Page Styles ========== */
+
+.user-about-section {
+  padding: 40px 0;
+  background-color: #e0fbfc; /* Light Cyan background like profile page */
+}
+
+.user-about-layout {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+/* User Info Card (Left Column) */
+.user-info-card {
+  flex: 0 0 320px; /* Fixed width for the info card */
+  background-color: #fff7f0; /* Beige/Cream like profile sidebar */
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.user-about-avatar {
+  width: 130px; /* Larger avatar */
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  border: 4px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.user-info-card h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin: 0 0 0.3rem 0;
+}
+
+.user-tagline {
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.user-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+.user-meta span {
+  display: inline-block; /* Or block */
+  margin: 0 0.5rem 0.3rem 0; /* Spacing */
+}
+.user-meta span .icon {
+  /* Style icon if using actual icons */
+  margin-right: 0.3rem;
+  color: #e63946; /* Example color */
+}
+
+.user-social-links {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+.user-social-links a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+.user-social-links a:hover {
+  opacity: 1;
+}
+.user-social-links img {
+  /* Style for placeholder images */
+  vertical-align: middle;
+}
+
+.btn-view-profile {
+  /* Style the secondary button */
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #eee;
+  color: #333;
+  border-color: #ddd;
+}
+.btn-view-profile:hover {
+  background-color: #ddd;
+}
+
+/* User Details Content (Right Column) */
+.user-details-content {
+  flex-grow: 1;
+  background-color: #fff; /* White background */
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.user-details-content h1 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #eee;
+}
+.user-details-content h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin: 2rem 0 0.8rem 0;
+}
+.user-details-content p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.user-details-content ul {
+  list-style: disc; /* Or other style */
+  margin: 0.5rem 0 1rem 1.5rem; /* Indent list */
+  padding: 0;
+}
+.user-details-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #444;
+}
+.user-details-content strong {
+  /* Style bold text if used */
+  color: var(--text-dark);
+}
+
+/* Responsive Adjustments for User About Page */
+@media (max-width: 992px) {
+  .user-about-layout {
+    flex-direction: column; /* Stack columns */
+    gap: 2rem;
+  }
+  .user-info-card {
+    flex: 0 0 auto; /* Reset flex */
+    width: 100%; /* Full width */
+    margin: 0 auto; /* Center card */
+    max-width: 500px; /* Optional max width */
+  }
+  .user-details-content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .user-about-section {
+    padding: 20px 0;
+  }
+  .user-info-card {
+    padding: 1.5rem;
+  }
+  .user-about-avatar {
+    width: 100px;
+    height: 100px;
+  }
+  .user-info-card h2 {
+    font-size: 1.3rem;
+  }
+  .user-tagline {
+    font-size: 0.9rem;
+  }
+
+  .user-details-content {
+    padding: 1.5rem;
+  }
+  .user-details-content h1 {
+    font-size: 1.5rem;
+  }
+  .user-details-content h3 {
+    font-size: 1.1rem;
+  }
+  .user-details-content p,
+  .user-details-content li {
+    font-size: 0.9rem;
+  }
+}
+/* ========== End of User About Page Styles ========== */
