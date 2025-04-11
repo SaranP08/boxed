@@ -1,0 +1,3491 @@
+/* Basic Reset & Variables */
+:root {
+  --primary-color: #fca311; /* Yellow/Orange */
+  --secondary-color: #e63946; /* Red */
+  --accent-color: #457b9d; /* Darker Blue/Teal */
+  --light-accent-color: #a8dadc; /* Lighter Blue/Teal */
+  --bg-light: #f1faee; /* Very Light Background */
+  --bg-pinkish: #fff0f3; /* Light Pinkish */
+  --text-dark: #333;
+  --text-light: #fff;
+  --border-light: #ddd;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif; /* Replace with actual font */
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-color: #fff; /* Default background */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  /* Consider adding specific font weights/styles */
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 60px 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+}
+
+.btn-primary:hover {
+  background-color: #e0900a; /* Darker shade */
+  transform: scale(1.03);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background-color: var(--text-light);
+  color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background-color: #eee;
+  transform: scale(1.03);
+  text-decoration: none;
+}
+
+/* Header / Hero */
+.hero-section {
+  background: url("https://placehold.co/1400x500/a8dadc/ffffff?text=Hero+Background")
+    no-repeat center center/cover;
+  height: 450px; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  color: var(--text-dark); /* Text color on hero */
+  text-align: left; /* Adjust if design differs */
+  position: relative; /* For potential overlays if needed */
+}
+
+.hero-content {
+  max-width: 500px; /* Limit text width */
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark); /* Ensure contrast */
+}
+.hero-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Best Selling */
+.best-selling {
+  background-color: #f8f9fa;
+}
+
+.tabs {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 8px 15px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-dark);
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active,
+.tab:hover {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+.tab.active {
+  font-weight: bold;
+  background-color: var(--bg-pinkish); /* Match the design's highlight */
+  border-radius: 15px;
+  border-bottom: none;
+  padding: 5px 12px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: var(--card-shadow);
+}
+.product-card.highlight {
+  border: 2px solid var(--secondary-color); /* Red border */
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px; /* Fixed height */
+  object-fit: cover; /* Ensure image covers area */
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.product-card p {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.product-card span {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Sales of the Week */
+.sales-week {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  padding: 40px 0;
+}
+
+.sales-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sales-text {
+  flex-basis: 50%;
+}
+
+.sales-text h3 {
+  font-size: 2.2rem;
+  margin-top: 0.5rem;
+}
+
+.sales-text p {
+  margin-bottom: 1.5rem;
+}
+.hot-deal {
+  background-color: var(--accent-color); /* Teal badge */
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.sales-image {
+  max-width: 250px; /* Adjust size */
+  border-radius: 8px;
+}
+
+/* Categories */
+.categories {
+  background-color: var(--light-accent-color); /* Light blue background */
+}
+
+.category-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.category-item img {
+  width: 100px; /* Adjust size */
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.5rem auto;
+  border: 3px solid white; /* White border like design */
+  box-shadow: var(--card-shadow);
+}
+
+.category-item p {
+  font-weight: bold;
+}
+
+/* Delivery */
+.delivery {
+  background: url("https://placehold.co/1400x400/a8dadc/ffffff?text=Delivery+Truck+Scene")
+    no-repeat bottom center/contain;
+  background-color: var(--light-accent-color); /* Fallback/Base color */
+  text-align: center;
+  padding-bottom: 150px; /* Space for background */
+  color: var(--text-dark);
+}
+
+.delivery-content p {
+  max-width: 600px;
+  margin: 1rem auto 1.5rem auto;
+}
+
+/* About Us */
+.about-us {
+  background-color: #fff;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: stretch; /* Make columns equal height */
+}
+
+.about-column {
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+.about-gallery {
+  background-color: var(--light-accent-color);
+}
+.about-photo img {
+  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+}
+.about-text {
+  background-color: var(--bg-pinkish);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-column h4 {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.about-text p {
+  margin-bottom: 1rem;
+}
+.about-text button {
+  margin-top: auto; /* Push button to bottom */
+}
+
+.about-gallery img {
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* Food Mood */
+.food-mood {
+  background-color: #f8f9fa;
+}
+
+.mood-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.mood-item {
+  text-align: center;
+}
+
+.mood-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.mood-item:hover img {
+  transform: scale(1.1);
+}
+
+.mood-item.mood-active {
+  background-color: white; /* Background for active item */
+  border-radius: 50px;
+  padding: 10px 20px;
+  box-shadow: var(--card-shadow);
+}
+.mood-item.mood-active img {
+  width: 60px; /* Slightly smaller image */
+  height: 60px;
+  margin-bottom: 0.3rem;
+}
+.mood-item.mood-active span {
+  display: block;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.mood-slider {
+  max-width: 500px;
+  margin: 1rem auto 0 auto;
+}
+.slider-track {
+  height: 8px;
+  background-color: var(--border-light);
+  border-radius: 4px;
+  position: relative;
+}
+.slider-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 10%; /* Static position for demo */
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* New Menu */
+.new-menu {
+  background-color: var(--bg-pinkish);
+}
+
+.menu-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+}
+.menu-header h3 {
+  color: var(--text-dark);
+}
+.menu-header p {
+  margin-bottom: 0.5rem;
+}
+.stars {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.menu-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+}
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.menu-card p {
+  font-weight: bold;
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+.menu-card span {
+  display: block;
+  color: var(--primary-color);
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+/* Customer Reviews */
+.reviews {
+  background-color: var(--bg-pinkish);
+  padding-bottom: 40px; /* Reduce padding if needed */
+  position: relative;
+  /* Add wavy top border/svg here if desired */
+  padding-top: 80px; /* Adjust if adding wavy border */
+}
+.reviews h2 {
+  color: var(--text-dark); /* Different heading color */
+}
+
+.review-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.review-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-top: 4px solid; /* Different color per card? For now, use one */
+  border-top-color: var(--primary-color); /* Example color */
+  box-shadow: var(--card-shadow);
+  position: relative; /* For potential quote marks */
+}
+/* Assign different border colors if needed via nth-child or specific classes */
+.review-card:nth-child(2) {
+  border-top-color: var(--accent-color);
+}
+.review-card:nth-child(3) {
+  border-top-color: var(--light-accent-color);
+}
+.review-card:nth-child(4) {
+  border-top-color: var(--secondary-color);
+}
+
+.review-card h4 {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+.review-card p {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #555;
+}
+.review-card span {
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.review-dots {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1;
+}
+.review-dots span {
+  color: var(--border-light);
+  cursor: pointer;
+  margin: 0 5px;
+}
+.review-dots span.active {
+  color: var(--primary-color);
+}
+
+/* Join Us On Insta */
+.insta-join {
+  background-color: #fff;
+  text-align: center;
+}
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.insta-post img {
+  border-radius: 8px;
+  width: 100%;
+  height: 280px; /* Adjust height */
+  object-fit: cover;
+  box-shadow: var(--card-shadow);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--light-accent-color);
+  color: var(--text-dark);
+  padding-top: 40px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-subscribe h3 {
+  margin-bottom: 0.5rem;
+}
+.footer-subscribe p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.subscribe-form {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.subscribe-form input[type="email"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+.subscribe-form button {
+  border-radius: 0 20px 20px 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-transform: none; /* 'Add' is not uppercase */
+}
+
+.social-icons span {
+  /* Replace with actual icons later */
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer-links h4 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+.footer-links a {
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  font-size: 0.85rem;
+  color: #555;
+  flex-wrap: wrap;
+}
+.footer-bottom p {
+  margin-bottom: 0;
+}
+.footer-bottom a {
+  color: #555;
+}
+
+/* Basic Responsive Adjustments */
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr; /* Stack to 2 columns */
+  }
+  .about-gallery {
+    grid-column: 1 / -1;
+  } /* Make gallery span full width */
+  .footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .hero-section {
+    height: 350px;
+    text-align: center;
+  }
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .sales-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sales-image {
+    margin-top: 1.5rem;
+    max-width: 200px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .category-list {
+    justify-content: center;
+  }
+  .category-item img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mood-icons {
+    gap: 1rem;
+  }
+
+  .review-list {
+    grid-template-columns: 1fr;
+  } /* Stack reviews */
+
+  .insta-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .subscribe-form {
+    justify-content: center;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-bottom p:last-child {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .menu-grid {
+    grid-template-columns: 1fr;
+  } /* Stack menu items */
+
+  .tabs button {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+  .mood-item img {
+    width: 60px;
+    height: 60px;
+  }
+  .mood-item.mood-active img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .insta-grid {
+    grid-template-columns: 1fr 1fr;
+  } /* 2 columns on small screens */
+}
+/* ========== About Us Page Styles ========== */
+
+/* Header Navigation (Shared) */
+.main-nav {
+  background-color: #fff;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-light);
+  position: sticky; /* Optional: make nav sticky */
+  top: 0;
+  z-index: 1000;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo a {
+  /* Style the logo link */
+  font-size: 1.5rem;
+  /* Add image logo styles if using img */
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.nav-links a {
+  color: var(--text-dark);
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  /* Style for active link */
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  text-decoration: none;
+}
+.header-icons span {
+  font-size: 1.5rem;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* About Hero */
+.hero-about {
+  background-color: var(--light-accent-color); /* Teal background */
+  padding: 50px 0;
+  color: var(--text-dark);
+}
+
+.hero-about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-about-text {
+  flex-basis: 50%;
+}
+.hero-about-text h1 {
+  font-size: 2.8rem;
+  color: var(--accent-color); /* Darker teal */
+  margin-bottom: 0.5rem;
+}
+.hero-about-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.hero-about-image {
+  flex-basis: 45%;
+  text-align: right; /* Or center */
+}
+.hero-about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Special Section */
+.special-section {
+  padding: 60px 0;
+  background: #fff;
+}
+.special-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.special-text {
+  flex-basis: 55%;
+}
+.special-text h2 {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.special-text p {
+  margin-bottom: 2rem;
+  color: #555;
+}
+.special-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start; /* Align items to the start */
+  align-items: center; /* Align items vertically */
+  margin-top: 2rem; /* Space above diagram */
+}
+.special-item {
+  padding: 15px 25px;
+  border-radius: 30px 5px 30px 5px; /* Pill-like shape */
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transform-origin: center;
+  min-width: 120px; /* Ensure minimum width */
+}
+.special-item span {
+  display: block; /* Allow line breaks */
+  line-height: 1.3;
+}
+.item-blue {
+  background-color: var(--light-accent-color);
+  color: var(--text-dark);
+  transform: rotate(-5deg);
+}
+.item-pink {
+  background-color: #fec5bb; /* Pinkish */
+  color: var(--text-dark);
+  transform: rotate(3deg);
+}
+.item-white {
+  background-color: #fff;
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  transform: rotate(-4deg);
+}
+.item-yellow {
+  background-color: #fde4cf; /* Light Yellow/Orange */
+  color: var(--text-dark);
+  transform: rotate(6deg);
+}
+
+.special-image {
+  flex-basis: 40%;
+}
+.special-image img {
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Journey Section */
+.journey-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+.journey-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.journey-images img {
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.journey-inception {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+}
+.journey-inception h3 {
+  color: var(--accent-color);
+}
+
+.journey-timeline {
+  position: relative;
+  width: 80%;
+  margin: 2rem auto;
+  height: 20px; /* Height for year positioning */
+}
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-color: var(--light-accent-color); /* Teal line */
+  border-radius: 3px;
+  transform: translateY(-50%);
+}
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  background-color: var(--primary-color); /* Yellow dots */
+  border-radius: 50%;
+  border: 3px solid #fff; /* White border around dots */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.timeline-years {
+  position: relative;
+  width: 100%;
+  margin-top: 25px; /* Space below the line for years */
+}
+.timeline-years span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Mission/Vision Section */
+.mission-vision {
+  padding: 0; /* Remove default section padding */
+}
+.mission-vision-content {
+  display: flex;
+  gap: 2rem;
+  background-color: var(--bg-pinkish); /* Pinkish background */
+  padding: 40px;
+  border-radius: 15px;
+  align-items: center;
+  margin-top: 60px; /* Space above this section */
+  margin-bottom: 60px; /* Space below this section */
+}
+.mission-text {
+  flex-basis: 60%;
+}
+.mission-text h3 {
+  color: var(--accent-color);
+}
+.mission-images {
+  flex-basis: 40%;
+  position: relative;
+  height: 350px; /* Adjust height as needed */
+}
+.mission-images img {
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  position: absolute;
+  object-fit: cover;
+}
+.mission-img-1 {
+  width: 65%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.mission-img-2 {
+  width: 45%;
+  height: 80%;
+  right: 0;
+  bottom: 0;
+  z-index: 2; /* Overlap */
+  border: 4px solid white;
+}
+
+/* Founder Message */
+.founder-message {
+  padding: 60px 0;
+}
+.founder-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.founder-image {
+  flex-basis: 35%;
+  background-color: var(--light-accent-color);
+  border-radius: 15px;
+  padding: 15px; /* Optional padding around image */
+  text-align: center;
+}
+.founder-image img {
+  border-radius: 10px;
+  max-width: 100%;
+}
+.founder-quote {
+  flex-basis: 60%;
+}
+.founder-quote h2 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+.founder-quote blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 40px; /* Space for quote mark */
+  line-height: 1.7;
+}
+.quote-mark {
+  font-size: 4rem;
+  color: var(--primary-color);
+  position: absolute;
+  line-height: 1;
+}
+.quote-mark:not(.end-quote) {
+  left: -10px;
+  top: -10px;
+}
+.quote-mark.end-quote {
+  /* Position end quote if needed, often omitted */
+  /* right: 0; bottom: -20px; */
+  display: none; /* Hide end quote for cleaner look */
+}
+.founder-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+  color: var(--accent-color);
+}
+.founder-title {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Team Section */
+.team-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.team-card,
+.join-team-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
+}
+.team-card:hover {
+  transform: translateY(-5px);
+}
+.team-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.team-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+.team-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+.social-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Team Card Backgrounds */
+.bg-grey {
+  background-color: #e9ecef;
+}
+.bg-pink {
+  background-color: #fec5bb;
+}
+.bg-yellow {
+  background-color: #fde4cf;
+}
+
+.join-team-card {
+  background-color: var(--light-accent-color); /* Teal background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-dark);
+  padding: 2rem;
+}
+.join-team-card h4 {
+  color: var(--accent-color);
+}
+.join-team-card p {
+  margin-bottom: 1.5rem;
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 60px 0;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.gallery-grid img {
+  border-radius: 8px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Video Section */
+.video-section {
+  padding: 60px 0;
+  background-color: #f8f9fa; /* Light background */
+}
+.video-placeholder {
+  position: relative;
+  cursor: pointer;
+  max-width: 900px; /* Limit video width */
+  margin: 0 auto;
+}
+.video-placeholder img {
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.video-placeholder:hover .play-button {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 60px 0;
+  background-color: var(--bg-pinkish); /* Pink background */
+}
+.faq-section h2 {
+  color: var(--text-dark);
+}
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  background-color: #fff;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 25px; /* Pill shape */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+}
+.faq-item span:first-child {
+  font-weight: bold;
+  color: #555;
+}
+.faq-toggle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Footer (Shared - No new styles needed if identical) */
+
+/* ========== Responsive Adjustments for About Page ========== */
+
+@media (max-width: 992px) {
+  /* Header Nav adjustments */
+  .nav-links {
+    gap: 15px;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+  .header-icons span {
+    font-size: 1.3rem;
+    margin-left: 10px;
+  }
+
+  .hero-about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-about-image {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .special-content {
+    flex-direction: column;
+  }
+  .special-text {
+    text-align: center;
+  }
+  .special-text h2 {
+    text-align: center;
+  }
+  .special-diagram {
+    justify-content: center;
+  }
+  .special-image {
+    margin-top: 2rem;
+    max-width: 80%;
+  }
+
+  .journey-images {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  } /* Stack images */
+  .journey-images img {
+    height: 250px;
+  } /* Adjust height if stacked */
+  .journey-timeline {
+    width: 90%;
+  }
+
+  .mission-vision-content {
+    flex-direction: column;
+    padding: 30px;
+  }
+  .mission-images {
+    height: 300px;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .founder-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .founder-image {
+    margin-bottom: 1.5rem;
+  }
+  .founder-quote h2 {
+    text-align: center;
+  }
+  .founder-quote blockquote {
+    padding-left: 0;
+    text-align: left;
+  } /* Adjust quote alignment */
+  .quote-mark:not(.end-quote) {
+    display: none;
+  } /* Hide quote mark on mobile? */
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  /* Further Header Nav adjustments */
+  .main-nav .logo {
+    flex-grow: 1;
+  } /* Allow logo to take space */
+  .nav-links {
+    display: none; /* Hide links, implement burger menu later */
+  }
+  .header-icons {
+    /* Adjust icon position if needed */
+  }
+
+  .hero-about-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-about-text p {
+    font-size: 1rem;
+  }
+
+  .special-diagram {
+    gap: 0.8rem;
+  }
+  .special-item {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .mission-images {
+    height: 250px;
+  }
+  .mission-img-1 {
+    width: 60%;
+  }
+  .mission-img-2 {
+    width: 50%;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  .team-card img {
+    width: 100px;
+    height: 100px;
+  }
+  .team-card,
+  .join-team-card {
+    padding: 1rem 0.8rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .gallery-grid img {
+    height: 150px;
+  }
+
+  .faq-item {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+  .faq-toggle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-about-image img {
+    max-width: 90%;
+  }
+
+  .special-item {
+    transform: rotate(0deg) !important; /* Remove rotation */
+  } /* Simpler on small screens */
+
+  .timeline-years span {
+    font-size: 0.8rem;
+  }
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+  }
+  .journey-timeline {
+    width: 95%;
+  }
+
+  .mission-vision-content {
+    padding: 20px;
+  }
+  .mission-images {
+    height: 200px;
+  }
+
+  .founder-quote blockquote {
+    font-size: 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  } /* Force 2 columns */
+  .join-team-card {
+    grid-column: 1 / -1;
+  } /* Make join card full width */
+
+  .video-placeholder img {
+    height: 300px;
+    object-fit: cover;
+  }
+  .play-button {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+  }
+
+  .faq-section .container {
+    padding: 0 10px;
+  } /* Reduce padding */
+  .faq-list {
+    width: 100%;
+  }
+}
+
+/* ========== Contact Page Styles ========== */
+
+/* Contact Section */
+.contact-section {
+  background-color: var(--light-accent-color); /* Teal background */
+  padding: 60px 0;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.contact-header h2 {
+  color: var(--accent-color); /* Darker Blue */
+  /* Add underline/graphic element below heading if needed */
+}
+.contact-header p {
+  max-width: 600px;
+  margin: 0.5rem auto 0 auto;
+  color: var(--text-dark);
+}
+
+.contact-content {
+  display: flex;
+  gap: 3rem;
+  background-color: #fff;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  flex-basis: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Gap between rows/elements */
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.form-group {
+  flex: 1; /* Make groups share space */
+  margin-bottom: 0.5rem; /* Spacing below each group */
+}
+.form-group-full {
+  width: 100%; /* Make group take full width */
+  flex-basis: 100%;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+.contact-form select {
+  appearance: none; /* Custom dropdown arrow needed */
+  background-color: #fff; /* Ensure background for select */
+  /* Add background arrow image */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 1em;
+  padding-right: 40px; /* Space for arrow */
+}
+
+.contact-form textarea {
+  resize: vertical; /* Allow vertical resize only */
+}
+
+.btn-submit {
+  border-radius: 8px; /* Less rounded button */
+  padding: 12px 30px;
+  margin-top: 1rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+.contact-image {
+  flex-basis: 35%;
+  position: relative; /* For starburst */
+}
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Add CSS for the starburst graphic on the image corner */
+.contact-image::after {
+  content: "⭐"; /* Basic star emoji, replace with SVG/Image */
+  position: absolute;
+  top: 10px;
+  right: -15px;
+  font-size: 3rem; /* Adjust size */
+  color: var(--primary-color); /* Yellow */
+  /* transform: rotate(15deg); */ /* Optional rotation */
+  background-color: white; /* Optional small white bg */
+  padding: 5px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+/* Contact Info Bar */
+.contact-info-bar {
+  background-color: var(--light-accent-color); /* Teal background */
+  padding: 30px 0;
+  /* Add subtle wave divider if needed */
+  margin-top: -20px; /* Overlap slightly if wave is added */
+  position: relative;
+  z-index: 5; /* Below contact form potentially */
+}
+.info-bar-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.info-item {
+  flex: 1;
+  min-width: 200px; /* Ensure items don't get too small */
+}
+.info-icon {
+  display: block;
+  font-size: 2rem; /* Adjust icon size */
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  /* Style background circle if using actual icons */
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 0.8rem auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.info-item h4 {
+  color: var(--accent-color);
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+.info-item p {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+/* Reserve Table Section */
+.reserve-table-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+.reserve-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.reserve-image {
+  flex-basis: 50%;
+}
+.reserve-image img {
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  width: 100%;
+}
+.reserve-text {
+  flex-basis: 45%;
+}
+.reserve-text h2 {
+  text-align: left;
+  color: var(--accent-color);
+}
+.reserve-text p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+.reserve-text .btn {
+  border-radius: 8px; /* Match other button */
+  padding: 12px 30px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Gallery Section (reuse existing styles if identical) */
+.gallery-section h2 {
+  text-align: center;
+  color: var(--accent-color);
+}
+
+/* Footer Adjustments for Contact Page */
+.site-footer .footer-subscribe p {
+  max-width: 100%; /* Allow longer text */
+  font-size: 0.85rem;
+}
+.site-footer .subscribe-form button {
+  border-radius: 8px; /* Match other buttons */
+  text-transform: uppercase; /* Submit is uppercase */
+}
+.site-footer .social-icons {
+  margin-top: 1rem;
+  text-align: left; /* Align icons left */
+}
+.site-footer .social-icons span {
+  margin-right: 15px;
+}
+.site-footer .social-icons img {
+  /* Style for image icons */
+  vertical-align: middle;
+}
+.site-footer .footer-links h4 {
+  color: var(--accent-color);
+  margin-bottom: 0.8rem;
+}
+.site-footer .footer-links h4:first-child {
+  margin-bottom: 1rem; /* Specific margin for MENU */
+}
+.site-footer .footer-links ul {
+  /* Adjust list styling if needed */
+}
+.site-footer .footer-links a {
+  font-size: 0.9rem;
+}
+/* Remove footer bottom if not present */
+/* .footer-bottom { display: none; } */
+
+/* Responsive Adjustments for Contact Page */
+@media (max-width: 992px) {
+  .contact-content {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .contact-image {
+    margin-top: 2rem;
+    max-height: 300px; /* Limit image height */
+  }
+  .contact-image::after {
+    /* Adjust starburst on smaller screens */
+    font-size: 2.5rem;
+    right: 5px;
+    top: 5px;
+  }
+
+  .reserve-content {
+    flex-direction: column;
+  }
+  .reserve-text {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  .reserve-text h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 40px 0;
+  }
+  .contact-header h2 {
+    font-size: 1.8rem;
+  }
+  .contact-content {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .contact-form {
+    gap: 0.5rem;
+  } /* Reduce gap between rows */
+  .form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  } /* Stack form fields */
+  .form-group {
+    margin-bottom: 0.8rem;
+  } /* Increase bottom margin when stacked */
+
+  .contact-image {
+    max-height: 250px;
+  }
+
+  .info-bar-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .info-item {
+    min-width: unset;
+  }
+
+  .reserve-table-section {
+    padding: 40px 0;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .gallery-grid img {
+    height: 150px;
+  }
+
+  /* Footer adjustments for mobile */
+  .site-footer .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .site-footer .footer-subscribe {
+    margin-bottom: 1.5rem;
+  }
+  .site-footer .subscribe-form {
+    justify-content: center;
+  }
+  .site-footer .social-icons {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  .site-footer .footer-links {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-header p {
+    font-size: 0.9rem;
+  }
+  .contact-content {
+    padding: 1rem;
+  }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  .btn-submit {
+    width: 100%;
+  } /* Full width button */
+  .contact-image {
+    display: none; /* Hide image on very small screens */
+  }
+
+  .info-icon {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.8rem;
+  }
+  .info-item h4 {
+    font-size: 0.9rem;
+  }
+  .info-item p {
+    font-size: 0.85rem;
+  }
+
+  .reserve-content {
+    gap: 1rem;
+  }
+  .reserve-text h2 {
+    font-size: 1.6rem;
+  }
+  .reserve-text p {
+    font-size: 0.9rem;
+  }
+}
+/* ========== End of Contact Page Styles ========== */
+
+/* ========== Reserve Page Styles ========== */
+
+/* Navigation Adjustments */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  /* Left side links */
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+.nav-right {
+  /* Container for right side elements */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-reserve-link {
+  color: var(--text-dark);
+  font-weight: bold;
+  text-decoration: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.nav-reserve-link:hover,
+.nav-reserve-link.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+.nav-right .header-icons {
+  display: flex; /* Ensure icons stay in a row */
+  gap: 15px; /* Spacing between icons */
+}
+.nav-right .header-icons span {
+  font-size: 1.4rem; /* Adjust icon size if needed */
+  margin-left: 0; /* Reset margin from previous rule */
+}
+
+/* Reserve Hero */
+.reserve-hero {
+  background-color: var(--light-accent-color); /* Light teal */
+  padding: 40px 0;
+  text-align: center;
+}
+.reserve-hero h2 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  /* Add underline graphic if desired */
+}
+.reserve-hero p {
+  max-width: 550px;
+  margin: 0 auto;
+  color: var(--text-dark);
+}
+
+/* Reserve Partners */
+.reserve-partners {
+  padding: 30px 0;
+  background-color: #fff; /* White background */
+}
+.reserve-partners h3 {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.partner-logo {
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 25px; /* Pill shape */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+.partner-logo:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+.partner-logo img {
+  display: block;
+  max-height: 30px; /* Control logo height */
+  width: auto;
+}
+
+/* Reserve Visual */
+.reserve-visual {
+  padding: 40px 0; /* Adjust padding */
+  background: linear-gradient(
+    to bottom,
+    #fff 50%,
+    var(--light-accent-color) 50%
+  ); /* Split background */
+  /* Add wave divider graphics */
+  position: relative;
+  overflow: hidden; /* Hide parts of wave if needed */
+}
+
+/* Example Wavy Divider (using pseudo-element - requires fine-tuning) */
+.reserve-visual::before {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Adjust position */
+  left: 0;
+  width: 100%;
+  height: 60px; /* Wave height */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath d='M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z' fill='%23a8dadc'%3E%3C/path%3E%3C/svg%3E"); /* Example wave SVG */
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1; /* Behind the image content */
+}
+
+.visual-placeholder {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden; /* Clip image to rounded corners */
+  box-shadow: var(--card-shadow);
+  z-index: 2; /* Above the wave */
+}
+.visual-placeholder img {
+  display: block;
+  width: 100%;
+}
+.play-pause-button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem; /* Adjust symbol size */
+  line-height: 45px; /* Center symbol vertically */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 3;
+}
+.play-pause-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Gallery Section on Reserve Page */
+.reserve-gallery {
+  padding: 60px 0;
+  background-color: var(--light-accent-color); /* Match lower half of visual */
+  /* Add top wave divider if needed */
+  position: relative; /* Needed for z-index stacking if waves overlap */
+  z-index: 0;
+}
+.reserve-gallery h2 {
+  color: var(--accent-color);
+}
+
+/* FAQ Section on Reserve Page */
+.reserve-faq {
+  background-color: #fff7f0; /* Light beige/pinkish */
+  padding: 60px 0;
+}
+.reserve-faq h2 {
+  color: var(--text-dark);
+}
+.reserve-faq .faq-item {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 30px; /* More rounded */
+}
+.reserve-faq .faq-toggle {
+  color: var(--primary-color);
+  background-color: #fef4e6; /* Lighter beige circle */
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+/* Delivery Section on Reserve Page */
+.reserve-delivery {
+  background-color: var(--light-accent-color);
+  /* Add top wave divider graphic if needed */
+  padding-top: 80px; /* Increase padding if wave added */
+}
+
+/* Footer (Shared Styles) */
+
+/* Responsive Adjustments for Reserve Page */
+
+@media (max-width: 992px) {
+  .nav-right .nav-reserve-link {
+    display: none; /* Hide text link on smaller screens */
+  }
+  /* You might move the reserve link into the main nav or a burger menu */
+
+  .partner-logos {
+    gap: 1rem;
+  }
+  .partner-logo {
+    padding: 10px 20px;
+  }
+
+  .reserve-visual::before {
+    height: 40px; /* Adjust wave */
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    /* Adjust nav for mobile */
+    position: relative; /* For potential burger menu */
+  }
+  .nav-links {
+    display: none;
+  } /* Hide main links */
+  .nav-right {
+    /* Right side might become burger toggle area */
+  }
+  .nav-reserve-link {
+    display: none;
+  } /* Ensure hidden */
+
+  .reserve-hero h2 {
+    font-size: 1.8rem;
+  }
+  .reserve-hero p {
+    font-size: 0.9rem;
+  }
+
+  .partner-logo img {
+    max-height: 25px;
+  }
+
+  .reserve-visual {
+    padding: 30px 0;
+  }
+  .visual-placeholder img {
+    /* Adjust if needed */
+  }
+  .play-pause-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    line-height: 40px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .gallery-section.reserve-gallery {
+    padding: 40px 0;
+  }
+  .faq-section.reserve-faq {
+    padding: 40px 0;
+  }
+
+  .reserve-delivery {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .reserve-hero {
+    padding: 30px 0;
+  }
+  .partner-logos {
+    gap: 0.8rem;
+  }
+  .partner-logo {
+    padding: 8px 15px;
+  }
+
+  .reserve-visual::before {
+    height: 30px; /* Smaller wave */
+  }
+  .play-pause-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+    line-height: 35px;
+  }
+
+  .reserve-faq .faq-item {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+  .reserve-faq .faq-toggle {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+  }
+}
+/* ========== End of Reserve Page Styles ========== */
+
+/* ========== Product Listing Page Styles ========== */
+
+/* Launch Banner */
+.launch-banner {
+  background-color: var(--light-accent-color); /* Light Teal */
+  padding: 20px 0;
+  margin-bottom: 2rem; /* Space below banner */
+  border-radius: 15px; /* Rounded corners for the whole banner section container if needed */
+  margin: 1rem auto; /* Center banner section if needed */
+  max-width: 1200px; /* Match container width */
+  /* Add outer container padding if needed */
+  padding: 1rem;
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  background-color: #fefae0; /* Creamy Yellow */
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  position: relative;
+}
+.banner-text {
+  flex-basis: 60%;
+}
+.banner-text h2 {
+  color: var(--text-dark);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.banner-text p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.banner-image {
+  flex-basis: 35%;
+  text-align: right;
+  position: relative;
+}
+.banner-image img {
+  max-width: 100%;
+  max-height: 150px; /* Control image height */
+  border-radius: 8px;
+}
+.hot-sale-badge {
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  background-color: var(--secondary-color); /* Red */
+  color: white;
+  padding: 8px 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  transform: rotate(5deg); /* Slight rotation */
+  /* Add starburst effect */
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); /* Basic angled cut */
+  /* More complex starburst might need SVG or pseudo-elements */
+}
+
+/* Product Listing Area Layout */
+.product-listing-area {
+  background-color: var(
+    --light-accent-color
+  ); /* Teal background for the whole section */
+  padding: 2rem 0;
+}
+.listing-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start; /* Align top */
+}
+
+/* Sidebar Filters */
+.sidebar-filters {
+  flex: 0 0 250px; /* Fixed width sidebar */
+  background-color: #fff7f0; /* Beige/Cream */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.sidebar-filters h4 {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.8rem;
+}
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+.filter-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle-arrow {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.filter-options {
+  list-style: none;
+  padding-left: 5px; /* Slight indent */
+  max-height: 200px; /* Limit height */
+  overflow-y: auto; /* Scroll if needed */
+  display: none; /* Hide by default */
+}
+.filter-options.open {
+  display: block; /* Show when open */
+}
+
+.filter-options li {
+  margin-bottom: 0.5rem;
+}
+.filter-options label {
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.filter-options input[type="checkbox"],
+.filter-options input[type="radio"] {
+  margin-right: 8px;
+  accent-color: var(--primary-color); /* Style checkbox color */
+}
+.btn-apply-filters {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #eee; /* Different style for apply */
+  color: #333;
+  font-weight: bold;
+}
+.btn-apply-filters:hover {
+  background-color: #ddd;
+}
+
+/* Product Grid Main Area */
+.product-grid-main {
+  flex-grow: 1; /* Take remaining space */
+}
+.grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.product-count {
+  font-weight: bold;
+  color: var(--text-dark);
+}
+.grid-sort-dropdown label {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+.grid-sort-dropdown select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Product Grid */
+.product-grid.large-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(180px, 1fr)
+  ); /* Adjust minmax */
+  gap: 1.5rem; /* Adjust gap */
+}
+.product-grid .product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 0; /* Remove padding from base card */
+  text-align: left; /* Align text left */
+  position: relative; /* For add to cart button */
+  transition: transform 0.2s ease-in-out;
+}
+.product-grid .product-card:hover {
+  transform: translateY(-3px);
+}
+
+.product-grid .product-card img {
+  width: 100%;
+  height: 160px; /* Adjust height */
+  object-fit: cover;
+  margin-bottom: 0;
+}
+.product-grid .product-card p {
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.8rem 1rem 0.2rem 1rem; /* Adjust padding */
+  margin-bottom: 0;
+}
+.product-grid .product-card span {
+  display: block;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.btn-add-cart {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.5rem;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+.btn-add-cart:hover {
+  background-color: #e0900a; /* Darker yellow */
+}
+
+/* Sales Banner within Product Grid */
+.product-sales-banner {
+  grid-column: 1 / -1; /* Make banner span full grid width */
+  margin: 2rem 0; /* Add vertical space */
+  padding: 0; /* Remove default section padding */
+  background-color: transparent; /* Make section transparent */
+}
+.product-sales-banner .sales-content {
+  background-color: var(--secondary-color); /* Red */
+  color: white;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+}
+.product-sales-banner .sales-text h3 {
+  font-size: 1.8rem; /* Adjust size */
+  margin-bottom: 1rem;
+}
+.product-sales-banner .sales-text .btn {
+  background-color: white;
+  color: var(--secondary-color);
+  border-radius: 8px;
+}
+.product-sales-banner .hot-deal.best-deals {
+  background-color: var(--primary-color); /* Yellow badge */
+  color: var(--text-dark);
+}
+.product-sales-banner .sales-image {
+  max-width: 200px; /* Adjust image size */
+}
+
+/* Load More Button */
+.load-more-container {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.btn-outline-load {
+  padding: 10px 25px;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  color: #555;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-outline-load:hover {
+  background-color: #eee;
+  border-color: #bbb;
+}
+
+/* Delivery Section on Product Page */
+.product-delivery {
+  background-color: var(--light-accent-color);
+  /* Adjust padding/background if needed */
+}
+.product-delivery .btn {
+  border-radius: 8px; /* Match other buttons */
+}
+
+/* Responsive Adjustments for Product Listing */
+
+@media (max-width: 992px) {
+  .listing-container {
+    flex-direction: column; /* Stack sidebar and grid */
+  }
+  .sidebar-filters {
+    flex: 0 0 auto; /* Reset flex basis */
+    width: 100%; /* Full width */
+    margin-bottom: 2rem;
+    /* Consider making filters horizontal or collapsible */
+  }
+  .product-grid.large-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(160px, 1fr)
+    ); /* Smaller cards */
+    gap: 1rem;
+  }
+  .product-grid .product-card img {
+    height: 140px;
+  }
+
+  .product-sales-banner .sales-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .product-sales-banner .sales-image {
+    margin-top: 1rem;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .launch-banner .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .launch-banner .banner-image {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .launch-banner .hot-sale-badge {
+    right: 10px;
+    top: -5px;
+  } /* Adjust badge pos */
+
+  .sidebar-filters {
+    padding: 1rem;
+  }
+  .sidebar-filters h4 {
+    font-size: 1rem;
+  }
+  .filter-title {
+    font-size: 0.9rem;
+  }
+  .filter-options label {
+    font-size: 0.85rem;
+  }
+
+  .grid-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .grid-sort-dropdown {
+    width: 100%;
+  }
+  .grid-sort-dropdown select {
+    width: 100%;
+  }
+
+  .product-grid.large-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(140px, 1fr)
+    ); /* Even smaller */
+  }
+  .product-grid .product-card img {
+    height: 120px;
+  }
+  .product-grid .product-card p {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem 0.1rem 0.8rem;
+  }
+  .product-grid .product-card span {
+    font-size: 0.8rem;
+    padding: 0 0.8rem 0.8rem 0.8rem;
+  }
+  .btn-add-cart {
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+    line-height: 30px;
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .launch-banner {
+    padding: 0.5rem;
+  }
+  .launch-banner .banner-content {
+    padding: 1rem;
+  }
+  .launch-banner .banner-text h2 {
+    font-size: 1.5rem;
+  }
+  .launch-banner .banner-text p {
+    font-size: 0.9rem;
+  }
+
+  .product-listing-area {
+    padding: 1rem 0;
+  }
+  .listing-container {
+    gap: 1rem;
+  }
+
+  .product-grid.large-grid {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+    gap: 0.8rem;
+  }
+  .product-grid .product-card img {
+    height: 130px;
+  } /* Slight increase for 2 columns */
+
+  .product-sales-banner .sales-text h3 {
+    font-size: 1.5rem;
+  }
+}
+/* ========== End of Product Listing Page Styles ========== */
+
+/* ========== Profile Page Styles ========== */
+
+body {
+  background-color: #e0fbfc; /* Light Cyan background for the page */
+}
+
+/* Override section padding for this page if needed */
+.profile-section {
+  padding: 40px 0;
+  background-color: transparent; /* Let body background show */
+}
+
+.profile-container {
+  /* Container styling if different from default */
+}
+
+.profile-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.profile-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start; /* Align items to the top */
+}
+
+/* Profile Sidebar */
+.profile-sidebar {
+  flex: 0 0 300px; /* Fixed width */
+  background-color: #fff7f0; /* Beige/Cream */
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  width: 60px; /* Smaller avatar */
+  height: 60px;
+  object-fit: cover;
+}
+
+.user-details span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.user-details h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.profile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-menu li {
+  margin-bottom: 0.5rem;
+}
+
+.profile-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500; /* Medium weight */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.profile-menu li.active a,
+.profile-menu li a:hover {
+  background-color: #f0f0f0; /* Light grey highlight */
+  color: var(--accent-color); /* Maybe primary color? */
+  font-weight: bold;
+}
+
+.profile-menu .menu-icon {
+  font-size: 1.2rem; /* Adjust icon size */
+  display: inline-block;
+  width: 20px; /* Ensure alignment */
+  text-align: center;
+  color: #e63946; /* Red icon color */
+}
+
+.profile-menu li.active .menu-icon,
+.profile-menu li a:hover .menu-icon {
+  color: inherit; /* Inherit color from link on hover/active */
+}
+
+.profile-menu .logout-item {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+.profile-menu .logout-item a {
+  color: #e63946; /* Red color for logout */
+}
+.profile-menu .logout-item a:hover {
+  background-color: #fceded; /* Light red background */
+}
+
+/* Profile Content Area */
+.profile-content {
+  flex-grow: 1; /* Take remaining space */
+  background-color: #fff; /* White background */
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.profile-content h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-form .form-section {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.form-avatar-group {
+  position: relative;
+  flex-shrink: 0; /* Don't shrink avatar group */
+}
+.form-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #eee;
+}
+.edit-avatar-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  line-height: 28px; /* Adjust for border */
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.form-fields {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 1rem 1.5rem; /* Row and column gap */
+}
+
+.profile-form .form-group {
+  margin-bottom: 0; /* Remove default margin */
+}
+
+.profile-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500; /* Medium weight */
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="email"],
+.profile-form input[type="tel"],
+.profile-form input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+.profile-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(252, 163, 17, 0.2); /* Optional focus ring */
+}
+
+.btn-save-changes {
+  display: block; /* Make button block */
+  margin: 2.5rem 0 0 auto; /* Margin top and align right */
+  padding: 12px 35px;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust Footer for Profile Page */
+.profile-footer {
+  background-color: var(--light-accent-color); /* Teal */
+  border-top-left-radius: 20px; /* Curved top corners */
+  border-top-right-radius: 20px;
+  margin-top: 3rem; /* Space above footer */
+  padding-top: 40px; /* Standard padding */
+}
+
+/* Header icon active state */
+.header-icon-link.profile-active {
+  /* Add styles if needed, e.g., different color or background */
+  /* Example: background-color: var(--primary-color); color: white; border-radius: 50%; padding: 5px; */
+  /* For simplicity, keeping it plain unless specific styling is requested */
+}
+
+/* Responsive Adjustments for Profile Page */
+
+@media (max-width: 992px) {
+  .profile-layout {
+    flex-direction: column; /* Stack sidebar and content */
+  }
+  .profile-sidebar {
+    flex: 0 0 auto; /* Reset flex */
+    width: 100%; /* Full width */
+    margin-bottom: 2rem;
+  }
+  .profile-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: #fff;
+  } /* Optional: simpler background on mobile */
+  .profile-section {
+    padding: 20px 0;
+  }
+  .profile-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  .profile-sidebar {
+    padding: 1rem;
+  }
+  .sidebar-user-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+  .profile-menu ul {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px; /* Allow horizontal scroll */
+  }
+  .profile-menu li {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  } /* Prevent shrinking */
+  .profile-menu li a {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  .profile-menu .menu-icon {
+    display: none; /* Hide icons in horizontal scroll */
+  }
+  .profile-menu .logout-item {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  .profile-menu .logout-item a {
+    color: var(--secondary-color);
+  }
+
+  .profile-content {
+    padding: 1.5rem;
+  }
+  .profile-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .profile-form .form-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .form-fields {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+  } /* Stack fields */
+  .btn-save-changes {
+    width: 100%;
+    margin: 1.5rem 0 0 0;
+  } /* Full width, centered */
+
+  .profile-footer {
+    border-radius: 0;
+  } /* Remove curve on mobile */
+}
+
+@media (max-width: 576px) {
+  .profile-sidebar {
+    padding: 0.8rem;
+  }
+  .profile-content {
+    padding: 1rem;
+  }
+  .profile-form input {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+  .btn-save-changes {
+    padding: 10px 25px;
+  }
+}
+
+/* Screen Reader Only class for labels */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* ========== End of Profile Page Styles ========== */
+
+/* ========== My Orders Page Styles ========== */
+
+.profile-content h3 {
+  /* Reusable heading style */
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem; /* Adjusted margin */
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Space between order items */
+}
+
+.order-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fff; /* Ensure white background */
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.order-item-image {
+  width: 70px; /* Adjust size */
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0; /* Prevent image shrinking */
+}
+
+.order-item-details {
+  flex-grow: 1; /* Take available space */
+}
+
+.order-item-details h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin: 0 0 0.2rem 0;
+}
+
+.order-status-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 10px; /* Pill shape */
+  margin-bottom: 0.3rem;
+}
+.order-status-badge.delivered {
+  background-color: #d1e7dd; /* Light green */
+  color: #0f5132; /* Dark green */
+}
+/* Add other status styles as needed */
+/* .order-status-badge.processing { background-color: #cfe2ff; color: #0a58ca; } */
+/* .order-status-badge.cancelled { background-color: #f8d7da; color: #842029; } */
+
+.order-status-text {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+}
+
+.order-item-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin: 0 1rem; /* Space around price */
+  flex-shrink: 0;
+}
+
+.order-item-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-shrink: 0; /* Prevent buttons shrinking */
+  flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+  justify-content: flex-end; /* Align buttons right */
+}
+
+.btn-view-order,
+.btn-write-review {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-view-order {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: #555;
+}
+.btn-view-order:hover {
+  background-color: #eee;
+}
+
+.btn-write-review {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--text-dark); /* Black/Dark text on yellow */
+}
+.btn-write-review:hover {
+  background-color: #e0900a;
+  border-color: #e0900a;
+}
+
+/* Responsive Adjustments for Orders */
+@media (max-width: 768px) {
+  .order-list-item {
+    flex-wrap: wrap; /* Allow items to wrap */
+    padding: 0.8rem;
+  }
+  .order-item-details {
+    flex-basis: 100%; /* Take full width when wrapped */
+    margin-top: 0.5rem; /* Space when wrapped */
+    order: 3; /* Change order on wrap */
+  }
+  .order-item-price {
+    margin: 0;
+    order: 2; /* Change order */
+    margin-left: auto; /* Push price right */
+  }
+  .order-item-image {
+    width: 60px;
+    height: 60px;
+    order: 1; /* Keep image first */
+  }
+  .order-item-actions {
+    flex-basis: 100%; /* Full width for actions */
+    justify-content: flex-start; /* Align buttons left */
+    margin-top: 0.8rem;
+    order: 4; /* Actions last */
+  }
+}
+
+@media (max-width: 576px) {
+  .order-list {
+    gap: 1rem;
+  }
+  .order-item-image {
+    width: 50px;
+    height: 50px;
+  }
+  .order-item-details h4 {
+    font-size: 0.9rem;
+  }
+  .order-status-badge {
+    font-size: 0.7rem;
+  }
+  .order-status-text {
+    font-size: 0.75rem;
+  }
+  .order-item-price {
+    font-size: 0.9rem;
+  }
+  .btn-view-order,
+  .btn-write-review {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+}
+/* ========== End of My Orders Page Styles ========== */
+/* ========== Manage Address Page Styles ========== */
+
+.profile-content h3 {
+  /* Reusable heading style */
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.address-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Responsive grid */
+  gap: 1.5rem;
+  margin-bottom: 2rem; /* Space before add button */
+}
+
+.address-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  border: 1px solid transparent; /* Base border */
+  position: relative; /* For positioning actions if needed */
+}
+
+/* Address Card Backgrounds */
+.address-card.bg-pink {
+  background-color: #fceded; /* Light Pink */
+  border-color: #f8d7da;
+}
+.address-card.bg-beige {
+  background-color: #fff7f0; /* Light Beige */
+  border-color: #fde4cf;
+}
+/* Add more background classes if needed */
+
+.address-card h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-dark);
+}
+
+.address-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.2rem 0;
+  line-height: 1.4;
+}
+
+.address-actions {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08); /* Separator line */
+  display: flex;
+  gap: 0.8rem;
+}
+
+.btn-address-edit,
+.btn-address-delete {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 500; /* Medium weight */
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid;
+  display: inline-flex; /* Align icon and text */
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-address-edit .icon,
+.btn-address-delete .icon {
+  font-size: 0.9rem; /* Icon size */
+}
+
+.btn-address-edit {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #333;
+}
+.btn-address-edit:hover {
+  background-color: #eee;
+}
+
+.btn-address-delete {
+  background-color: #f8d7da; /* Light red */
+  border-color: #f5c2c7;
+  color: #842029; /* Dark red */
+}
+.btn-address-delete:hover {
+  background-color: #f5c2c7;
+}
+
+.btn-add-new-address {
+  display: block;
+  width: fit-content; /* Button width based on content */
+  margin: 0 auto; /* Center button */
+  padding: 12px 30px;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments for Address Page */
+@media (max-width: 768px) {
+  /* Adjust profile content padding if needed */
+  .profile-content {
+    padding: 1.5rem;
+  }
+  .address-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  } /* Stack cards */
+}
+
+@media (max-width: 576px) {
+  .profile-content {
+    padding: 1rem;
+  }
+  .address-card {
+    padding: 1rem;
+  }
+  .address-card h4 {
+    font-size: 0.95rem;
+  }
+  .address-card p {
+    font-size: 0.85rem;
+  }
+  .address-actions {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    flex-wrap: wrap;
+  } /* Allow wrap */
+  .btn-address-edit,
+  .btn-address-delete {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+  .btn-add-new-address {
+    width: 100%;
+    padding: 10px;
+  } /* Full width */
+}
+/* ========== End of Manage Address Page Styles ========== */
+
+/* ========== Notifications Page Styles ========== */
+
+.profile-content h3 {
+  /* Reusable heading style */
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between items */
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0; /* Padding top/bottom */
+  border-bottom: 1px solid #eee; /* Separator line */
+}
+.notification-item:last-child {
+  border-bottom: none; /* Remove border from last item */
+}
+
+.notification-icon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem; /* Icon size */
+}
+/* Notification Icon Backgrounds (match sidebar colors?) */
+.notification-icon.bg-pink {
+  background-color: #fceded;
+  color: #e63946;
+}
+.notification-icon.bg-beige {
+  background-color: #fff7f0;
+  color: #f4a261;
+}
+.notification-icon.bg-blue {
+  background-color: #cfe2ff;
+  color: #457b9d;
+}
+/* Add more colors as needed */
+
+.notification-details {
+  flex-grow: 1;
+}
+.notification-details h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin: 0 0 0.2rem 0;
+}
+.notification-details p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.notification-time {
+  font-size: 0.8rem;
+  color: #888;
+  flex-shrink: 0;
+  margin-left: 1rem; /* Space before time */
+}
+
+/* Responsive Adjustments for Notifications */
+@media (max-width: 768px) {
+  /* Reuse profile content padding adjustments */
+  .profile-content {
+    padding: 1.5rem;
+  }
+  .notification-item {
+    padding: 0.8rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-content {
+    padding: 1rem;
+  }
+  .notification-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  .notification-details h4 {
+    font-size: 0.9rem;
+  }
+  .notification-details p {
+    font-size: 0.8rem;
+  }
+  .notification-time {
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+  }
+  .notification-item {
+    gap: 0.8rem;
+  }
+}
+/* ========== End of Notifications Page Styles ========== */
+/* ========== Modal Styles ========== */
+
+.modal-overlay {
+  position: fixed; /* Stay in place */
+  inset: 0; /* Cover the entire viewport */
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center;
+  align-items: center;
+  z-index: 1001; /* Ensure it's on top */
+  /* display: none; */ /* Controlled by inline style or JS initially */
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Start hidden */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Style to show modal (add this class with JS) */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  max-width: 450px; /* Limit modal width */
+  width: 90%; /* Responsive width */
+  text-align: center;
+  position: relative; /* For close button positioning */
+  transform: scale(0.9); /* Start slightly smaller */
+  transition: transform 0.3s ease;
+}
+
+/* Style for modal opening animation */
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #aaa;
+  cursor: pointer;
+  padding: 5px;
+}
+.modal-close-btn:hover {
+  color: #333;
+}
+
+.modal-emoji {
+  font-size: 4rem; /* Large emoji */
+  margin-bottom: 1rem;
+}
+
+.modal-content h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  border-bottom: none; /* Remove border if inherited */
+  padding-bottom: 0;
+  line-height: 1.4;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column; /* Stack buttons */
+  gap: 1rem;
+}
+
+.modal-actions .btn {
+  /* Common modal button styles */
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: none; /* Remove shadows if any */
+  border: 1px solid; /* Ensure border width is consistent */
+}
+
+.btn-modal-no {
+  /* "NO, JUST KIDDING" */
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--text-dark); /* Text color on yellow */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15); /* Add shadow */
+}
+.btn-modal-no:hover {
+  background-color: #e0900a;
+  border-color: #e0900a;
+}
+
+.btn-outline-modal-yes {
+  /* "YES, LOG ME OUT" */
+  background-color: transparent;
+  border-color: #ccc;
+  color: #555;
+}
+.btn-outline-modal-yes:hover {
+  background-color: #eee;
+  border-color: #bbb;
+}
+
+/* Responsive Adjustments for Modal */
+@media (max-width: 576px) {
+  .modal-content {
+    padding: 2rem 1.5rem;
+  }
+  .modal-emoji {
+    font-size: 3rem;
+  }
+  .modal-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .modal-actions .btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
+/* ========== End of Modal Styles ========== */

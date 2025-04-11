@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Food Bliss</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Add icon library links here if needed -->
+  </head>
+  <body>
+    <!-- Simple Header Navigation -->
+    <nav class="main-nav">
+      <div class="container nav-container">
+        <div class="logo">
+          <a
+            href="index.html"
+            style="
+              background-color: #457b9d;
+              color: white;
+              padding: 10px 15px;
+              border-radius: 5px;
+              text-decoration: none;
+              font-weight: bold;
+            "
+            >LOGO</a
+          >
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Shop</a></li>
+          <!-- Added Shop Link -->
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <!-- Mark Contact as active -->
+        </ul>
+        <div class="header-icons">
+          <span>📞</span>
+          <!-- Reserve Table Icon -->
+          <span>🔍</span>
+          <!-- Search Icon -->
+          <a href="profile.html" class="header-icon-link">👤</a>
+          <span>🛒</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Us Section -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-header">
+          <h2>CONTACT US</h2>
+          <p>
+            Enjoy gourmet goodness delivered to your door or ready for takeout.
+            Order now for a delicious dining experience at home!
+          </p>
+        </div>
+        <div class="contact-content">
+          <form class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  placeholder="Enter Your First Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="second-name">Second Name</label>
+                <input
+                  type="text"
+                  id="second-name"
+                  name="second-name"
+                  placeholder="Enter Your Second Name"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input
+                  type="tel"
+                  id="mobile"
+                  name="mobile"
+                  placeholder="+XX XXXXXXXXXX"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter Your Email Address"
+                />
+              </div>
+            </div>
+            <div class="form-group form-group-full">
+              <label for="looking-for">What are you looking for</label>
+              <select id="looking-for" name="looking-for">
+                <option value="">Select Post Query</option>
+                <option value="reservation">Reservation Inquiry</option>
+                <option value="order">Order Issue</option>
+                <option value="feedback">Feedback</option>
+                <option value="career">Career</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group form-group-full">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Enter Your Message"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit">
+              Submit
+            </button>
+          </form>
+          <div class="contact-image">
+            <img
+              src="https://placehold.co/400x500/a8dadc/ffffff?text=Restaurant+Front+Desk"
+              alt="Restaurant Interior"
+            />
+            <!-- Add the starburst graphic via CSS if needed -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Info Bar -->
+    <section class="contact-info-bar">
+      <div class="container info-bar-content">
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <!-- Placeholder Icon -->
+          <h4>CALL US</h4>
+          <p>+91 1234567890, 9876543210</p>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">✉️</span>
+          <!-- Placeholder Icon -->
+          <h4>EMAIL US</h4>
+          <p>info@foodbliss.com</p>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <!-- Placeholder Icon -->
+          <h4>LOCATION</h4>
+          <p>
+            No 29, SK Complex, Anna Salai,<br />
+            Coimbatore West, Coimbatore 641045
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reserve Table Section -->
+    <section class="reserve-table-section">
+      <div class="container reserve-content">
+        <div class="reserve-image">
+          <img
+            src="https://placehold.co/500x350/f4a261/ffffff?text=Restaurant+Seating"
+            alt="Restaurant Ambiance"
+          />
+        </div>
+        <div class="reserve-text">
+          <h2>RESERVE A TABLE</h2>
+          <p>
+            Secure your spot for an unforgettable dining experience! Reserve
+            your table now and embark on a culinary journey filled with
+            exquisite flavors and exceptional service.
+          </p>
+          <a href="reserve.html" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Gallery (Reused from About page, or use a different set of images) -->
+    <section class="gallery-section">
+      <div class="container">
+        <h2>OUR GALLERY</h2>
+        <div class="gallery-grid">
+          <img
+            src="https://placehold.co/250x250/d4a373/ffffff?text=Burger+Pic"
+            alt="Gallery Image 1"
+          />
+          <img
+            src="https://placehold.co/250x250/fec5bb/ffffff?text=Cake+Slice"
+            alt="Gallery Image 2"
+          />
+          <img
+            src="https://placehold.co/250x250/a3b18a/ffffff?text=Pasta+Dish"
+            alt="Gallery Image 3"
+          />
+          <img
+            src="https://placehold.co/250x250/e63946/ffffff?text=Fried+Chicken"
+            alt="Gallery Image 4"
+          />
+          <!-- Add more images as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (Same as index.html & about.html, adjust links if necessary) -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-subscribe">
+          <h3>STAY UPDATED</h3>
+          <p>
+            Join our email list for new menu offers, and order confirmations
+            functionality. AZDY Dfg ID #ErynY5YvNc.
+          </p>
+          <form class="subscribe-form">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <!-- Text changed -->
+          </form>
+          <div class="social-icons">
+            <span
+              ><img
+                src="https://placehold.co/24x24/ffffff/777777?text=IG"
+                alt="Instagram"
+            /></span>
+            <span
+              ><img
+                src="https://placehold.co/24x24/ffffff/777777?text=FB"
+                alt="Facebook"
+            /></span>
+            <span
+              ><img
+                src="https://placehold.co/24x24/ffffff/777777?text=LI"
+                alt="LinkedIn"
+            /></span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>MENU</h4>
+          <!-- Heading Changed -->
+          <ul>
+            <li><a href="#">Burger</a></li>
+            <li><a href="#">Sandwiches</a></li>
+            <li><a href="#">Coffee</a></li>
+            <li><a href="#">Mocktails</a></li>
+            <li><a href="#">Beverages</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <!-- Empty column in design? Or add more links -->
+          <h4> </h4>
+          <!-- Placeholder for alignment -->
+          <ul>
+            <li><a href="#">Sweet Treats</a></li>
+            <li><a href="#">Cheesy Pasta</a></li>
+            <li><a href="#">Pasta</a></li>
+            <li><a href="#">Mule Drinks</a></li>
+            <li><a href="#">Hot Chocolate</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>OTHER LINKS</h4>
+          <!-- Heading Changed -->
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Reserve My Table</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms And Conditions</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- No footer bottom in this design -->
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

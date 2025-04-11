@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop - Food Bliss</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Add icon library links here if needed -->
+  </head>
+  <body>
+    <!-- Simple Header Navigation -->
+    <nav class="main-nav">
+      <div class="container nav-container">
+        <div class="logo">
+          <a
+            href="index.html"
+            style="
+              background-color: #457b9d;
+              color: white;
+              padding: 10px 15px;
+              border-radius: 5px;
+              text-decoration: none;
+              font-weight: bold;
+            "
+            >LOGO</a
+          >
+        </div>
+        <ul class="nav-links">
+          <li><a href="products.html" class="active">Shop</a></li>
+          <!-- Shop Active -->
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <a href="reserve.html" class="nav-reserve-link">Reserve my table</a>
+          <div class="header-icons">
+            <span>🔍</span>
+            <a href="profile.html" class="header-icon-link">👤</a>
+            <span>🛒</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- New Launch Banner Section -->
+    <section class="launch-banner">
+      <div class="container banner-content">
+        <div class="banner-text">
+          <h2>NEW LAUNCH</h2>
+          <p>Where Gourmet Treats Meet<br />Unforgettable Moments!</p>
+        </div>
+        <div class="banner-image">
+          <img
+            src="https://placehold.co/300x150/8ecae6/ffffff?text=Blue+Rice+Dish"
+            alt="New Launch Dish"
+          />
+          <span class="hot-sale-badge">HOT SALE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Product Listing Area -->
+    <section class="product-listing-area">
+      <div class="container listing-container">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar-filters">
+          <h4>FILTER BY</h4>
+          <div class="filter-group">
+            <h5 class="filter-title">
+              Category <span class="toggle-arrow">-</span>
+            </h5>
+            <ul class="filter-options open">
+              <li>
+                <label
+                  ><input type="checkbox" name="category" value="coffee" />
+                  Coffee</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="category" value="snacks" />
+                  Snacks</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="category" value="meals" />
+                  Meals</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="category" value="drinks" />
+                  Drinks</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="category" value="desserts" />
+                  Desserts</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" name="category" value="bakery" />
+                  Bakery</label
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="filter-group">
+            <h5 class="filter-title">
+              Price Range <span class="toggle-arrow">+</span>
+            </h5>
+            <ul class="filter-options">
+              <!-- Closed by default -->
+              <!-- Add price range slider or options here -->
+              <li>Price Filter Placeholder</li>
+            </ul>
+          </div>
+          <div class="filter-group">
+            <h5 class="filter-title">
+              Sort By <span class="toggle-arrow">+</span>
+            </h5>
+            <ul class="filter-options">
+              <!-- Closed by default -->
+              <li>
+                <label
+                  ><input type="radio" name="sort" value="popularity" />
+                  Popularity</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="sort" value="price_asc" /> Price
+                  Low to High</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="sort" value="price_desc" /> Price
+                  High to Low</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="radio" name="sort" value="newest" />
+                  Newest</label
+                >
+              </li>
+            </ul>
+          </div>
+          <button class="btn btn-secondary btn-apply-filters">
+            Apply Filters
+          </button>
+        </aside>
+
+        <!-- Product Grid -->
+        <main class="product-grid-main">
+          <div class="grid-header">
+            <span class="product-count">80 Products</span>
+            <div class="grid-sort-dropdown">
+              <label for="sort-grid">Sort by:</label>
+              <select id="sort-grid" name="sort-grid">
+                <option value="popularity">Popularity</option>
+                <option value="price_asc">Price Low to High</option>
+                <option value="price_desc">Price High to Low</option>
+                <option value="newest">Newest</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="product-grid large-grid">
+            <!-- Row 1 -->
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/a0522d/ffffff?text=Drink+1"
+                alt="P1"
+              />
+              <p>Iced Coffee</p>
+              <span>$4.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/a3b18a/ffffff?text=Salad+1"
+                alt="P2"
+              />
+              <p>Fresh Salad</p>
+              <span>$8.50</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/e63946/ffffff?text=Pizza+1"
+                alt="P3"
+              />
+              <p>Pizza Slice</p>
+              <span>$5.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/f4a261/ffffff?text=Frappe+1"
+                alt="P4"
+              />
+              <p>Caramel Frappe</p>
+              <span>$6.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <!-- Row 2 -->
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/e76f51/ffffff?text=Wings+1"
+                alt="P5"
+              />
+              <p>Spicy Wings</p>
+              <span>$9.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/e9c46a/ffffff?text=Tea+1"
+                alt="P6"
+              />
+              <p>Iced Tea</p>
+              <span>$3.50</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/2a9d8f/ffffff?text=Pizza+2"
+                alt="P7"
+              />
+              <p>Veggie Pizza</p>
+              <span>$15.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/264653/ffffff?text=Bubble+Tea"
+                alt="P8"
+              />
+              <p>Bubble Tea</p>
+              <span>$5.50</span><button class="btn-add-cart">+</button>
+            </div>
+            <!-- Row 3 -->
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/8ecae6/ffffff?text=Rice+Bowl"
+                alt="P9"
+              />
+              <p>Rice Bowl</p>
+              <span>$10.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/ffb703/ffffff?text=Skewers"
+                alt="P10"
+              />
+              <p>Grilled Skewers</p>
+              <span>$7.50</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/fb8500/ffffff?text=Sandwich"
+                alt="P11"
+              />
+              <p>Club Sandwich</p>
+              <span>$8.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/e63946/ffffff?text=Smoothie"
+                alt="P12"
+              />
+              <p>Berry Smoothie</p>
+              <span>$6.50</span><button class="btn-add-cart">+</button>
+            </div>
+            <!-- Row 4 -->
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/a0522d/ffffff?text=Cake+1"
+                alt="P13"
+              />
+              <p>Choco Cake</p>
+              <span>$5.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/fde4cf/ffffff?text=Cake+2"
+                alt="P14"
+              />
+              <p>Mango Cake</p>
+              <span>$6.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/a3b18a/ffffff?text=Rolls+1"
+                alt="P15"
+              />
+              <p>Spring Rolls</p>
+              <span>$4.50</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/8ecae6/ffffff?text=Rolls+2"
+                alt="P16"
+              />
+              <p>Sushi Rolls</p>
+              <span>$9.50</span><button class="btn-add-cart">+</button>
+            </div>
+          </div>
+
+          <!-- Sales of the Week Banner (Integrated) -->
+          <section class="sales-week product-sales-banner">
+            <div class="container sales-content">
+              <div class="sales-text">
+                <span class="hot-deal best-deals">BEST DEALS</span>
+                <h3>Sales of the Week</h3>
+                <!-- Removed paragraph for closer match -->
+                <a href="#" class="btn btn-primary">Shop Now</a>
+                <!-- Changed Button -->
+              </div>
+              <img
+                src="https://placehold.co/250x200/ffffff/e63946?text=Burger"
+                alt="Burger Deal"
+                class="sales-image"
+              />
+            </div>
+          </section>
+
+          <!-- More Products -->
+          <div class="product-grid large-grid">
+            <!-- Row 5 -->
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/fde4cf/ffffff?text=Pasta+1"
+                alt="P17"
+              />
+              <p>Creamy Pasta</p>
+              <span>$12.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/fec5bb/ffffff?text=Drink+2"
+                alt="P18"
+              />
+              <p>Red Drink</p>
+              <span>$4.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/e0fbfc/ffffff?text=Milkshake"
+                alt="P19"
+              />
+              <p>Pink Shake</p>
+              <span>$6.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/e63946/ffffff?text=Fried+Food"
+                alt="P20"
+              />
+              <p>Fried Snacks</p>
+              <span>$7.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <!-- Row 6 -->
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/a3b18a/ffffff?text=Pasta+2"
+                alt="P21"
+              />
+              <p>Pesto Pasta</p>
+              <span>$11.50</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/fec5bb/ffffff?text=Cake+3"
+                alt="P22"
+              />
+              <p>Pink Cake</p>
+              <span>$6.50</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/d4a373/ffffff?text=Burger+2"
+                alt="P23"
+              />
+              <p>Big Burger</p>
+              <span>$10.00</span><button class="btn-add-cart">+</button>
+            </div>
+            <div class="product-card">
+              <img
+                src="https://placehold.co/250x200/264653/ffffff?text=Appetizer"
+                alt="P24"
+              />
+              <p>Platter</p>
+              <span>$14.00</span><button class="btn-add-cart">+</button>
+            </div>
+          </div>
+
+          <div class="load-more-container">
+            <button class="btn btn-outline-load">Show More Products</button>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- Delivery & Take Out (Reused Section) -->
+    <section class="delivery product-delivery">
+      <div class="container delivery-content">
+        <h2>DELIVERY & TAKE OUT</h2>
+        <p>
+          Enjoy gourmet goodness delivered to your door or ready for takeout.
+          Order now for a delicious dining experience at home!
+        </p>
+        <a href="products.html" class="btn btn-primary">Shop Now</a>
+        <!-- Link to self or checkout -->
+      </div>
+      <!-- Background image/illustration handled in CSS -->
+    </section>
+
+    <!-- Footer (Same as contact.html) -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-subscribe">
+          <h3>STAY UPDATED</h3>
+          <p>
+            Join our email list for new menu offers, and order confirmations
+            functionality. AZDY Dfg ID #ErynY5YvNc.
+          </p>
+          <form class="subscribe-form">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <div class="social-icons">
+            <span
+              ><img
+                src="https://placehold.co/24x24/ffffff/777777?text=IG"
+                alt="Instagram"
+            /></span>
+            <span
+              ><img
+                src="https://placehold.co/24x24/ffffff/777777?text=FB"
+                alt="Facebook"
+            /></span>
+            <span
+              ><img
+                src="https://placehold.co/24x24/ffffff/777777?text=LI"
+                alt="LinkedIn"
+            /></span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>MENU</h4>
+          <ul>
+            <li><a href="#">Burger</a></li>
+            <li><a href="#">Sandwiches</a></li>
+            <li><a href="#">Coffee</a></li>
+            <li><a href="#">Mocktails</a></li>
+            <li><a href="#">Beverages</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4> </h4>
+          <ul>
+            <li><a href="#">Sweet Treats</a></li>
+            <li><a href="#">Cheesy Pasta</a></li>
+            <li><a href="#">Pasta</a></li>
+            <li><a href="#">Mule Drinks</a></li>
+            <li><a href="#">Hot Chocolate</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>OTHER LINKS</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="reserve.html">Reserve My Table</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms And Conditions</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
