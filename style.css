@@ -3675,3 +3675,193 @@ body {
   }
 }
 /* ========== End of User About Page Styles ========== */
+/* ========== User About Page - Content Detail Styles ========== */
+
+.user-details-content section {
+  margin-bottom: 2.5rem; /* Space between major sections */
+}
+
+.user-details-content section:last-of-type {
+  margin-bottom: 1rem; /* Less space after last section */
+}
+
+.user-details-content section h2 {
+  font-size: 1.4rem;
+  color: var(--accent-color); /* Dark Teal */
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color); /* Yellow underline */
+  display: inline-block; /* Make underline fit content */
+}
+
+.user-details-content section h3 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* Education & Responsibility Styling */
+.education-entry,
+.responsibility-item,
+.award-item {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem; /* Slight indent */
+  border-left: 3px solid #eee; /* Subtle left border */
+}
+.education-entry p,
+.responsibility-item p,
+.award-item p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+.education-entry h3,
+.responsibility-item h4,
+.award-item h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.05rem;
+}
+.education-entry em,
+.responsibility-item em,
+.award-item em {
+  /* Style dates or italics */
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Project Styling */
+.project-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #eee; /* Dashed separator */
+}
+.project-item:last-child {
+  border-bottom: none;
+}
+.project-item h3 {
+  margin: 0 0 0.4rem 0;
+}
+.project-item p strong {
+  /* Style Tools/Tech line */
+  color: var(--text-dark);
+  font-weight: 600; /* Semi-bold */
+}
+.project-item ul {
+  list-style: disc;
+  margin: 0.5rem 0 0.5rem 1.5rem; /* Indent bullets */
+  padding: 0;
+}
+.project-item li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Responsive columns */
+  gap: 1.5rem;
+}
+.skill-category h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin: 0 0 0.5rem 0;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #eee;
+}
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.skill-category li {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.3rem;
+  padding-left: 10px; /* Indent slightly */
+  position: relative;
+}
+/* Optional: Add custom bullet */
+.skill-category li::before {
+  content: "›"; /* Example bullet */
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Interests List */
+.interests-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  column-count: 2; /* Simple 2-column layout */
+  column-gap: 2rem;
+}
+.interests-list li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+@media (max-width: 576px) {
+  .interests-list {
+    column-count: 1; /* Single column on small screens */
+  }
+}
+
+/* Certificates */
+#certificates p {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+}
+
+/* User Info Card Social Links - Update */
+.user-info-card .user-social-links a {
+  display: inline-flex; /* Align icon and text */
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
+  margin: 0 0.5rem 0.5rem 0.5rem; /* Adjust spacing */
+}
+.user-info-card .user-social-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive Adjustments for Detail Content */
+@media (max-width: 768px) {
+  .user-details-content section h2 {
+    font-size: 1.3rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .user-details-content section h2 {
+    font-size: 1.2rem;
+  }
+  .user-details-content section h3 {
+    font-size: 1rem;
+  }
+  .project-item li,
+  .skill-category li,
+  .interests-list li,
+  #certificates p,
+  .education-entry p,
+  .responsibility-item p,
+  .award-item p {
+    font-size: 0.9rem;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  } /* Stack skills on smallest */
+}
