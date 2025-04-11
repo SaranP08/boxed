@@ -106,8 +106,7 @@ section {
 
 /* Header / Hero */
 .hero-section {
-  background: url("https://placehold.co/1400x500/a8dadc/ffffff?text=Hero+Background")
-    no-repeat center center/cover;
+  background: url("images/download.jpeg") no-repeat center center/cover;
   height: 450px; /* Adjust as needed */
   display: flex;
   align-items: center;
